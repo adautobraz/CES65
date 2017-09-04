@@ -1,72 +1,198 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-<div class="col-lg-8 col-offset-2">
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <label for="exampleSelect1">Example select</label>
-        <select class="form-control" id="exampleSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleSelect2">Example multiple select</label>
-        <select multiple class="form-control" id="exampleSelect2">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleTextarea">Example textarea</label>
-        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-      </div>
-      <fieldset class="form-group">
-        <legend>Radio buttons</legend>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-            Option one is this and that&mdash;be sure to include why it's great
-          </label>
-        </div>
-        <div class="form-check">
-        <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-            Option two can be something else and selecting it will deselect option one
-          </label>
-        </div>
-        <div class="form-check disabled">
-        <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-            Option three is disabled
-          </label>
-        </div>
-      </fieldset>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input">
-          Check me out
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+<body onload="isClient()">
+<form>
+  <div class="form-group">
+    <label for="labelPassword">Senha</label>
+    <input type="password" class="form-control" id="inputPassword" placeholder="Digite uma senha">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword2">Confirme sua Senha</label>
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Digite novamente a senha">
+  </div>
+  <fieldset class="form-group">
+    <legend>Forma de pagamento</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        Plano de Saude
+      </label>
+    </div>
+    <div class="form-check">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+        Particular
+      </label>
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <label id="labelInsurance">Selecione seu Plano de Sa&uacute;de</label>
+    <select class="form-control" id="inputInsurance">
+      <option>Abet/Plamtel</option>
+      <option>Allianz/AGF</option>
+      <option>Amafresp</option>
+      <option>Amhpla</option>
+      <option>Amil</option>
+      <option>Assefaz</option>
+      <option>Bradesco</option>
+      <option>Bardella</option>
+      <option>Cabesp</option>
+      <option>Care Plus</option>
+      <option>Cassi</option>
+      <option>Economus</option>
+      <option>FUSEX</option>
+      <option>Gama</option>
+      <option>Geap</option>
+      <option>Golden Cross</option>
+      <option>Hospital Adventista</option>
+      <option>Intermedica</option>
+      <option>Lincx</option>
+      <option>Maritima</option>
+      <option>Medial</option>
+      <option>Mediservice</option>
+      <option>Notre Dame</option>
+      <option>Omint</option>
+      <option>Plas JMU</option>
+      <option>Porto Seguro</option>
+      <option>Proasa</option>
+      <option>Sabesprev</option>
+      <option>Spa Saude</option>
+      <option>Sul Am&eacute;rica</option>
+      <option>Unimed</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label id="labelRegister">N&uacute;mero do registro no plano</label></label>
+    <input type="number" class="form-control" id="inputRegister" placeholder="Digite aqui seu n&uacute;mero de registro">
+  </div>
+  <div class="form-group">
+    <label id="labelSpecialty">Selecione a especialidade</label>
+    <select class="form-control" id="inputSpecialty">
+      <option>Acupuntura</option>
+      <option>Alergia e Imunologia</option>
+      <option>Anestesiologia</option>
+      <option>Angiologia</option>
+      <option>Cancerologia</option>
+      <option>Cardiologia</option>
+      <option>Cirurgia Cardiovascular</option>
+      <option>Cirurgia da M&atilde;o</option>
+      <option>Cirurgia de cabe&ccedil;a e pesco&ccedil;o</option>
+      <option>Cirurgia do Aparelho Digestivo</option>
+      <option>Cirurgia Geral</option>
+      <option>Cirurgia Pedi&aacute;trica</option>
+      <option>Cirurgia Pl&aacute;stica</option>
+      <option>Cirurgia Tor&aacute;cica</option>
+      <option>Cirurgia Vascular</option>
+      <option>Cl&iacute;nica M&eacute;dica</option>
+      <option>Coloproctologia</option>
+      <option>Dermatologia</option>
+      <option>Endocrinologia e Metabologia</option>
+      <option>Endoscopia</option>
+      <option>Gastroenterologia</option>
+      <option>Geriatria</option>
+      <option>Ginecologia</option>
+      <option>Hematologia e Hemoterapia</option>
+      <option>Homeopatia</option>
+      <option>Infectologia</option>
+      <option>Mastologia</option>
+      <option>Neurocirurgia</option>
+      <option>Neurologia</option>
+      <option>Nutrologia</option>
+      <option>Obstetr&iacute;cia</option>
+      <option>Oftalmologia</option>
+      <option>Ortopedia e Traumatologia</option>
+      <option>Otorrinolaringologia</option>
+      <option>Patologia</option>
+      <option>Pediatria</option>
+      <option>Pneumologia</option>
+      <option>Psiquiatria</option>
+      <option>Radiologia</option>
+      <option>Radioterapia</option>
+      <option>Reumatologia</option>
+      <option>Urologia</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label id="labelCRM">Nome do medico</label></label>
+    <input type="number" class="form-control" id="inputCRM" placeholder="Digite o Nome do medico">
+  </div>
+  <div class="form-group">
+      <label for="labelinputDat" >Data da Consulta</label>
+      <input class="form-control" type="date" value="2017-01-01" id="inputDate">
+  </div>
+
+  <div class="form-group">
+      <label id="labelSpecialty">Selecione a especialidade</label>
+      <select class="form-control" id="inputSpecialty">
+        <option>09:30</option>
+        <option>10:00</option>
+        <option>11:30</option>
+        <option>12:00</option>
+        <option>13:00</option>
+      </select>
+    </div>
+
+
+
+
+
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+  
+  <script>
+  var password = document.getElementById("inputPassword"), confirm_password = document.getElementById("inputPassword2");
+  function validatePassword(){
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Senhas diferentes!");
+    } else {
+      confirm_password.setCustomValidity('');
+    }
+  }
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
+  
+  var doctor = document.getElementById("optionsRadios2");
+  function isDoctor(){
+      if(doctor.value == "option2") {
+          //Oculta campos exclusivos de paciente
+          document.getElementById("inputInsurance").style.display = 'none';
+          document.getElementById("labelInsurance").style.display = 'none';
+          document.getElementById("inputRegister").style.display = 'none';
+          document.getElementById("labelRegister").style.display = 'none';
+          //Mostra campos exclusivos de médico
+          document.getElementById("inputSpecialty").style.display = 'block';
+          document.getElementById("inputCRM").style.display = 'block';
+          document.getElementById("inputWorkplace").style.display = 'block';
+          document.getElementById("labelSpecialty").style.display = 'block';
+          document.getElementById("labelCRM").style.display = 'block';
+          document.getElementById("labelWorkplace").style.display = 'block';
+      }
+      
+  }
+  doctor.onchange = isDoctor;
+  var client = document.getElementById("optionsRadios1");
+  function isClient(){
+      if(client.value == "option1") {
+          //Mostra campos exclusivos de paciente
+          document.getElementById("inputInsurance").style.display = 'block';
+          document.getElementById("inputRegister").style.display = 'block';
+          document.getElementById("labelInsurance").style.display = 'block';
+          document.getElementById("labelRegister").style.display = 'block';
+          //Oculta campos exclusivos de médico
+          document.getElementById("inputSpecialty").style.display = 'block';
+          document.getElementById("inputCRM").style.display = 'block';
+          document.getElementById("inputWorkplace").style.display = 'none';
+          document.getElementById("labelSpecialty").style.display = 'block';
+          document.getElementById("labelCRM").style.display = 'block';
+          document.getElementById("labelWorkplace").style.display = 'none';
+          document.getElementById("labelinputDate").style.display = 'none';
+          document.getElementById("inputDate").style.display = 'none';
+      }
+      
+  }
+  client.onchange = isClient;
+  
+  </script>
+  
+</form>
+</body>

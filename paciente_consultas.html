@@ -2,14 +2,14 @@
 
 <body onload="isClient()">
 <form>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="labelPassword">Senha</label>
     <input type="password" class="form-control" id="inputPassword" placeholder="Digite uma senha">
-  </div>
-  <div class="form-group">
+  </div> -->
+  <!-- <div class="form-group">
     <label for="inputPassword2">Confirme sua Senha</label>
     <input type="password" class="form-control" id="inputPassword2" placeholder="Digite novamente a senha">
-  </div>
+  </div> -->
   <fieldset class="form-group">
     <legend>Forma de pagamento</legend>
     <div class="form-check">
@@ -122,8 +122,9 @@
   </div>
 
   <div class="form-group">
-      <label id="labelSpecialty">Selecione a especialidade</label>
+      <label id="labelSpecialty">Selecione o horario</label>
       <select class="form-control" id="inputSpecialty">
+        <option selected>--:--</option>
         <option>09:30</option>
         <option>10:00</option>
         <option>11:30</option>
@@ -148,8 +149,8 @@
       confirm_password.setCustomValidity('');
     }
   }
-  password.onchange = validatePassword;
-  confirm_password.onkeyup = validatePassword;
+  // password.onchange = validatePassword;
+  // confirm_password.onkeyup = validatePassword;
   
   var doctor = document.getElementById("optionsRadios2");
   function isDoctor(){
@@ -181,7 +182,7 @@
           //Oculta campos exclusivos de médico
           document.getElementById("inputSpecialty").style.display = 'block';
           document.getElementById("inputCRM").style.display = 'block';
-          document.getElementById("inputWorkplace").style.display = 'none';
+          //document.getElementById("inputWorkplace").style.display = 'none';
           document.getElementById("labelSpecialty").style.display = 'block';
           document.getElementById("labelCRM").style.display = 'block';
           document.getElementById("labelWorkplace").style.display = 'none';

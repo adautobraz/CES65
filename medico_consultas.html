@@ -1,2 +1,107 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
+<body>
+    <div class="col-lg-10 col-lg-offset-5">
+        <div class="jumbotron">
+          <h1 class="display-3">Painel do medico</h1>
+          <p class="lead">Adauto Braz da Silva Neto: Oftalmologista</p>
+        </div>
+        <h2>Consultas marcadas</h2>
+        <br>
+        <div>
+            <div class="input-group">
+              <input type="text" class="form-control" id="busca" onkeyup="buscar()" placeholder="Buscar por data...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Buscar</button>
+              </span>
+            </div>
+        </div>
+        <table class="table" id="consultas">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Horario</th>
+              <th>Paciente</th>
+              <th>Convenio</th>
+              <th>Acoes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>04/09/17</td>
+              <td>14:30</td>
+              <td>Gabriela Tourinho</td>
+              <td>Unimed</td>
+              <td><button type="button" class="btn btn-danger btn-sm">Cancelar</button></td>
+            </tr>
+            <tr>
+              <td>05/09/17</td>
+              <td>15:30</td>
+              <td>Gabriel Lima</td>
+              <td>Unimed</td>
+              <td><button type="button" class="btn btn-danger btn-sm">Cancelar</button></td>
+            </tr>       
+            <tr>
+              <td>06/09/17</td>
+              <td>16:30</td>
+              <td>Matheus Lins</td>
+              <td>Amil</td>
+              <td><button type="button" class="btn btn-danger btn-sm">Cancelar</button></td>
+            </tr> 
+             <tr>
+              <td>07/09/17</td>
+              <td>17:30</td>
+              <td>Eduardo Martins</td>
+              <td>Amil</td>
+              <td><button type="button" class="btn btn-danger btn-sm">Cancelar</button></td>
+            </tr> 
+            <h2></h2>
+          </tbody>
+        </table>
+        
+        <h2>Adicionar disponibilidade</h2><br>
+        <div class = "col-lg-10 col-lg-offset-1">
+            <form>
+                <div class="form-group row">
+                  <label for="example-datetime-local-input" class="col-3 col-form-label">Data e hora</label>
+                  <div class="col-3">
+                    <input class="form-control" type="date" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                  </div>
+                  <div class="col-3">
+                    <input class="form-control" type="time" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                  </div>
+                  <div class="col-3">
+                    <input class="form-control" type="time" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                  </div>
+                </div>
+            </form>
+            <button type="button" class="btn btn-danger">Adicionar</button>
+
+        </div>
+        
+        <br><br>
+        
+        <script>
+            function buscar() {
+              // Declare variables 
+              var input, filter, table, tr, td, i;
+              input = document.getElementById("busca");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("consultas");
+              tr = table.getElementsByTagName("tr");
+            
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                } 
+              }
+            }
+            </script>
+    </div>
+</body>
